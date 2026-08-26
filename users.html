@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+
+<meta charset="UTF-8">
+
+<title>Пользователи</title>
+
+
+<style>
+
+body {
+
+    font-family: Arial, sans-serif;
+    background:#f2f4f7;
+    padding:30px;
+
+}
+
+
+h1 {
+
+    text-align:center;
+
+}
+
+
+.container {
+
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.1);
+
+}
+
+
+table {
+
+    width:100%;
+    border-collapse:collapse;
+
+}
+
+
+th {
+
+    background:#222;
+    color:white;
+    padding:12px;
+
+}
+
+
+td {
+
+    padding:12px;
+    border-bottom:1px solid #ddd;
+    text-align:center;
+
+}
+
+
+tr:hover {
+
+    background:#f5f5f5;
+
+}
+
+
+.badge {
+
+    padding:5px 10px;
+    border-radius:10px;
+    background:#e8f5e9;
+
+}
+
+
+a {
+
+    display:inline-block;
+    margin-top:20px;
+    text-decoration:none;
+    background:#222;
+    color:white;
+    padding:10px 20px;
+    border-radius:8px;
+
+}
+
+
+</style>
+
+
+</head>
+
+
+<body>
+
+
+<h1>
+👥 Зарегистрированные пользователи
+</h1>
+
+
+<div class="container">
+
+
+<table>
+
+
+<tr>
+
+<th>ID</th>
+<th>Имя</th>
+<th>IP</th>
+<th>Устройство</th>
+<th>ОС</th>
+<th>Браузер</th>
+<th>Язык</th>
+<th>Дата регистрации</th>
+
+</tr>
+
+
+
+{% for user in users %}
+
+
+<tr>
+
+
+<td>
+{{ user.id }}
+</td>
+
+
+<td>
+{{ user.username }}
+</td>
+
+
+<td>
+{{ user.ip_address }}
+</td>
+
+
+<td>
+{{ user.device }}
+</td>
+
+
+<td>
+{{ user.operating_system }}
+</td>
+
+
+<td>
+{{ user.browser }}
+</td>
+
+
+<td>
+{{ user.language }}
+</td>
+
+
+<td>
+{{ user.created_at }}
+</td>
+
+
+</tr>
+
+
+{% endfor %}
+
+
+</table>
+
+
+<a href="/">
+⬅ Вернуться к анализатору
+</a>
+
+
+</div>
+
+
+</body>
+
+</html>
